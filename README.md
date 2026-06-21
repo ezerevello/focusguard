@@ -43,12 +43,12 @@ This blocks both the website and any desktop app that communicates with those sa
 ### Linux
 
 ```bash
-git clone https://github.com/ezerevello/deeplink
+git clone https://github.com/ezerevello/focusguard
 cd focusguard
 ./scripts/setup.sh
 ```
 
-This compiles the binary, installs it to `/usr/local/bin/focusguard`, and registers it as a systemd service (runs as root, starts automatically on boot). Once finished, it opens `http://localhost:7878` in your browser.
+This compiles the binary, installs it to `/usr/local/bin/focusguard`, and registers it as a systemd service (runs as root, starts automatically on boot). Once finished, it opens `http://focus.local/` (`http://localhost:7878`) in your browser.
 
 To uninstall: `./scripts/setup.sh --uninstall`
 
@@ -66,7 +66,7 @@ sudo ./focusguard
 Open PowerShell **as Administrator** (or let the script self-elevate) and run:
 
 ```powershell
-git clone https://github.com/ezerevello/deeplink
+git clone https://github.com/ezerevello/focusguard
 cd focusguard
 .\scripts\setup.ps1
 ```
