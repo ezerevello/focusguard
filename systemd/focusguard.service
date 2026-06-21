@@ -1,0 +1,14 @@
+[Unit]
+Description=FocusGuard - local website blocker
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/focusguard -no-browser
+Restart=on-failure
+RestartSec=3
+User=root
+Environment=HOME=/root
+
+[Install]
+WantedBy=multi-user.target

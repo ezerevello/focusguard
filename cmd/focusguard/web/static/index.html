@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FocusGuard</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="statusbar" id="statusbar">
+      <div class="brand"><span class="dot"></span> FocusGuard</div>
+      <div class="item" id="status-os"></div>
+      <div class="item" id="status-hosts"></div>
+      <div class="item" id="status-elevated"></div>
+    </div>
+
+    <div class="banner-warning" id="banner-elevation">
+      This process does not have permission to write to the hosts file
+      (<code id="hosts-path-inline"></code>). Blocklists will not apply
+      until you run it with administrator/root privileges. Check the project's
+      README to install it as a service.
+    </div>
+
+    <div class="layout">
+      <section class="panel" id="panel-sites">
+        <div class="panel-header">
+          <h2 class="eyebrow">Sites</h2>
+        </div>
+
+        <div class="preset-row" id="preset-row"></div>
+
+        <div class="site-list" id="site-list">
+          <div class="empty-state">Loading…</div>
+        </div>
+
+        <form class="add-form" id="add-form">
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            autocomplete="off"
+          />
+          <input
+            type="text"
+            name="domains"
+            placeholder="domain.com, another.com"
+            autocomplete="off"
+          />
+          <button class="btn" type="submit">Add</button>
+        </form>
+      </section>
+
+      <section class="panel" id="panel-session">
+        <div class="panel-header">
+          <h2 class="eyebrow">Focus Session</h2>
+        </div>
+
+        <div class="gauge-wrap">
+          <div class="gauge">
+            <svg viewBox="0 0 100 100">
+              <circle class="track" cx="50" cy="50" r="44"></circle>
+              <circle
+                class="progress"
+                id="gauge-progress"
+                cx="50"
+                cy="50"
+                r="44"
+                stroke-dasharray="276.5"
+                stroke-dashoffset="276.5"
+              ></circle>
+            </svg>
+            <div class="gauge-center">
+              <div class="gauge-time idle" id="gauge-time">no session</div>
+              <div class="gauge-label" id="gauge-label"></div>
+            </div>
+          </div>
+          <div
+            class="session-locked-list"
+            id="session-locked-list"
+            style="display: none"
+          >
+            locked until the timer ends
+            <span class="names" id="session-locked-names"></span>
+          </div>
+        </div>
+
+        <form class="session-form" id="session-form">
+          <span class="field-label">Block during session</span>
+          <div class="checklist" id="session-checklist"></div>
+
+          <div class="duration-row">
+            <input
+              type="number"
+              name="minutes"
+              id="session-minutes"
+              value="25"
+              min="1"
+              max="600"
+            />
+            <span>minutes</span>
+          </div>
+
+          <button class="btn btn-primary" type="submit" id="session-start-btn">
+            Start session
+          </button>
+          <p class="hint">
+            Once started, the selected sites remain blocked with no way
+            to disable them until the timer expires. That's the whole idea.
+          </p>
+        </form>
+      </section>
+    </div>
+
+    <footer class="meta" id="footer-meta"></footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
