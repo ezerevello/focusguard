@@ -4,11 +4,13 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/focusguard -no-browser
-Restart=on-failure
+ExecStart=/usr/local/bin/focusguard -port 80 -no-browser
+Restart=always
 RestartSec=3
 User=root
 Environment=HOME=/root
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=multi-user.target
