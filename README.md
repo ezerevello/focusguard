@@ -3,6 +3,11 @@
 A local website blocker with its own web UI for Linux and Windows.
 No Docker, no Node.
 
+<img width="1920" height="1080" alt="Screenshot_20260621_014050" src="https://github.com/user-attachments/assets/58cae1c8-b57b-4788-ad34-ceba0cea9661" />
+<img width="1920" height="1080" alt="Screenshot_20260621_014111" src="https://github.com/user-attachments/assets/3050b497-a26b-440f-a25c-7164bef18a0d" />
+
+
+
 This is a single Go binary, cross-compiled for Linux and Windows (`GOOS=windows go build`), which:
 
 * Serves the embedded web UI (vanilla HTML/CSS/JS, no build step, completely self-contained in the binary via `go:embed`),
