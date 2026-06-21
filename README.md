@@ -48,7 +48,7 @@ cd focusguard
 ./scripts/setup.sh
 ```
 
-This compiles the binary, installs it to `/usr/local/bin/focusguard`, and registers it as a systemd service (runs as root, starts automatically on boot). Once finished, it opens `http://focus.local/` (`http://localhost:7878`) in your browser.
+This compiles the binary, installs it to `/usr/local/bin/focusguard`, and registers it as a systemd service (runs as root, starts automatically on boot). Once finished, it opens `http://focus.local/` (or `http://localhost/`) in your browser.
 
 To uninstall: `./scripts/setup.sh --uninstall`
 
@@ -81,7 +81,7 @@ To uninstall: `.\scripts\setup.ps1 -Uninstall`
 
 ## Usage
 
-Once installed, the web UI is available at `http://focus.local/` (or `http://localhost:7878`):
+Once installed, the web UI is available at `http://focus.local/` (or simply `http://localhost/`):
 
 * **Sites**: Easily add services with a single click from presets (YouTube, WhatsApp, Instagram, TikTok, Facebook, X, Reddit, Netflix, Twitch, Discord) or add a custom domain. Each has an on/off toggle.
 * **Focus Session**: Choose which sites to block and for how many minutes. While a session is active, these sites **cannot be unlocked** until the timer runs out—this friction is the core concept of the app.
