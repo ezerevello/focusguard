@@ -81,10 +81,11 @@ To uninstall: `.\scripts\setup.ps1 -Uninstall`
 
 ## Usage
 
-Once installed, the web UI is available at `http://localhost:7878`:
+Once installed, the web UI is available at `http://focus.local/` (or `http://localhost:7878`):
 
 * **Sites**: Easily add services with a single click from presets (YouTube, WhatsApp, Instagram, TikTok, Facebook, X, Reddit, Netflix, Twitch, Discord) or add a custom domain. Each has an on/off toggle.
 * **Focus Session**: Choose which sites to block and for how many minutes. While a session is active, these sites **cannot be unlocked** until the timer runs out—this friction is the core concept of the app.
+* **Easy Access**: No need to type ports or `localhost`. The installer creates a native desktop/application shortcut and maps a custom local domain so you can access the web UI simply by navigating to `http://focus.local`.
 
 ## Project Structure
 
